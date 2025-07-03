@@ -1,0 +1,111 @@
+<html>
+<head>
+<title>
+BBMP Data View
+</title>
+
+
+	
+	<meta charset="utf-8" />
+	
+  	<link href='style/css.css' rel='stylesheet' type='text/css'>
+  	<link href="style/font-awesome.min.css" rel="stylesheet">
+ 	
+	<!-- Leaflet -->
+	<link rel="stylesheet" href="style/leaflet.css" />
+	
+	<link rel="stylesheet" href="style/basics.css" />
+	
+
+	<script> L_PREFER_CANVAS = true;</script>
+	
+	
+	<script src="script/leaflet.js"></script>
+	<script src="script/leaflet.label.js"></script>
+	<script src="script/leaflet-pip.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3n7Dfe0nUZQ9I0dh2uD0S3vc9LIrbb2c"></script>
+	
+	
+
+	<script src="data/geo/BBMP_Old.js"></script>
+	<script src="data/geo/BBMP_MP_Constituency.js"></script>
+	<script src="data/geo/BBMP_Assembly_Constituency.js"></script>
+	<script src="data/geo/BBMP_WardsFile.js"></script>
+	<script src="data/geo/BBMP_5_1.js"></script>
+	<script src="data/geo/BBMP_5_1_1.js"></script>
+	<script src="data/geo/BBMP_5_2.js"></script>
+	<script src="data/geo/BBMP_5_2_2.js"></script>
+
+
+
+
+
+
+
+	<script src="script/jquery.min.js"></script>
+	<script type="text/javascript" src="script/jsapi.js"></script>
+	
+	
+    <script>
+		MB_ATTR = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+				'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+				'Imagery   <a href="http://mapbox.com">Mapbox</a>';
+		MB_URL = 'http://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png';
+		OSM_URL = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+		OSM_ATTRIB = '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+			
+		
+	</script>
+
+</head>
+<body>
+
+<div id="formsect" style="width: 25%; float: left; line-height: 2%; z-index: 10; position: absolute; margin-left: 1%;margin-top: 1%; box-shadow: 0 0 15px rgba(240,170,0,0.7); border-radius: 5px; opacity: 0.8; background-color: white;" >
+
+<h2> View Data </h2>
+<br>
+
+<input type="checkbox" id="bbmpoldbox" name="bbmpoldbox" value="BBMPOldYes" onchange="funcswitch()" checked>
+<label for="bbmpoldbox"> Existing BBMP </label><br>
+
+<input type="checkbox" id="parlibox" name="parlibox" value="ParliYes" onchange="funcswitch()" >
+<label for="parlibox"> Parliamentary Constituency</label><br>
+<input type="checkbox" id="assbox" name="assbox" value="AssYes" onchange="funcswitch()">
+<label for="assbox"> Assembly Constituency </label><br>
+
+
+<br> <br>
+<br> <br>
+
+<p>Scenario Map<select id="scbox" class='drop' style="float: right; width: 40%" onchange="scswitch()">
+<option value="selectany">Choose the Scenario</option>
+'51', '511', '52' and '522'
+<option value="51">Scenario 5.1</option>
+<option value="511">Scenario 5.1.1</option>
+<option value="52">Scenario 5.2</option>
+<option value="522">Scenario 5.2.2</option>
+</select >
+</p>
+<br> <br>
+<br> <br>
+
+<p>Background Map<select id="bgbox" class='drop' style="float: right; width: 40%" onchange="bgswitch()">
+<option value="selectany">Choose the Background Map</option>
+'roadmap', 'satellite', 'terrain' and 'hybrid'
+<option value="roadmap">Google Road Map</option>
+<option value="satellite">Google Satellite Map</option>
+<option value="terrain">Google Terrain Map</option>
+<option value="hybrid">Google Hybrid Map</option>
+</select >
+<br>
+</p>
+
+</div>
+<div id="map" class="map" style="height: 100%; width: 100%; float:left; border:1px solid #f0ab00; z-index: 1">
+
+<script src="script/mapper.js"></script>
+
+</div>
+
+</body>
+</html>
