@@ -31,9 +31,7 @@ BBMP Data View
 	<script src="data/geo/BBMP_MP_Constituency.js"></script>
 	<script src="data/geo/BBMP_Assembly_Constituency.js"></script>
 	<script src="data/geo/BBMP_WardsFile.js"></script>
-	<script src="data/geo/BBMP_5_1.js"></script>
-	<script src="data/geo/BBMP_5_1_1.js"></script>
-	<script src="data/geo/BBMP_5_2.js"></script>
+	<script src="data/geo/BBMP_Opt2.js"></script>
 	<script src="data/geo/BBMP_5_2_2.js"></script>
 
 
@@ -64,12 +62,22 @@ BBMP Data View
 
 <h2> View Data </h2>
 <br>
+<p>Scenario Map<select id="scbox" class='drop' style="float: right; width: 40%" onchange="scswitch()">
+<option value="selectany">Choose the Scenario</option>
+'500'and '522'
+<option value="522">Option 1</option>
+<option value="500">Option 2</option>
 
-<input type="checkbox" id="bbmpoldbox" name="bbmpoldbox" value="BBMPOldYes" onchange="funcswitch()" checked>
-<label for="bbmpoldbox"> Existing BBMP </label><br>
+</select >
+</p>
+<br> <br>
+<br> <br>
 
-<input type="checkbox" id="parlibox" name="parlibox" value="ParliYes" onchange="funcswitch()" >
-<label for="parlibox"> Parliamentary Constituency</label><br>
+
+<input type="checkbox" id="wardbox" name="Wardbox" value="WardYes" onchange="funcswitch()">
+<label for="Wardbox"> BBMP Wards </label><br>
+
+
 <input type="checkbox" id="assbox" name="assbox" value="AssYes" onchange="funcswitch()">
 <label for="assbox"> Assembly Constituency </label><br>
 
@@ -77,17 +85,6 @@ BBMP Data View
 <br> <br>
 <br> <br>
 
-<p>Scenario Map<select id="scbox" class='drop' style="float: right; width: 40%" onchange="scswitch()">
-<option value="selectany">Choose the Scenario</option>
-'51', '511', '52' and '522'
-<option value="51">Scenario 5.1</option>
-<option value="511">Scenario 5.1.1</option>
-<option value="52">Scenario 5.2</option>
-<option value="522">Scenario 5.2.2</option>
-</select >
-</p>
-<br> <br>
-<br> <br>
 
 <p>Background Map<select id="bgbox" class='drop' style="float: right; width: 40%" onchange="bgswitch()">
 <option value="selectany">Choose the Background Map</option>
