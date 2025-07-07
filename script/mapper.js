@@ -39,6 +39,19 @@
 	
 	}
 	
+	function style_GBA(feature) {
+	
+	return {
+	    fillColor: 'white',
+		weight: 3,
+        opacity: 1,
+        color: 'red',
+        dashArray: '3',
+        fillOpacity: 0
+		};
+	
+	}
+	
 	function style_Ass(feature) {
 	
 	return {
@@ -167,6 +180,7 @@
 	var Ass_M=L.geoJson(AssConst, {style: style_Ass});
 	var Ward_M=L.geoJson(BBMPWards, {style: style_Ward_Transparent});
 	var Ward_N=L.geoJson(BBMPWards, {style: style_Ward});
+	var GBA_M=L.geoJson(GBA, {style: style_GBA});
 	var BBMP_OLD_M=L.geoJson(bbmpold, {style: style_BBMPOLD});
     var scmap=L.geoJson(BBMP522, {style: style_Scenario});
 
@@ -265,6 +279,13 @@ function scswitch() {
   {
 	  map.removeLayer(Ass_M);
       Ass_M=L.geoJson(AssConst, {style: style_Ass}).addTo(map);
+	  
+  } 
+  
+  if ($('#gbabox').is(":checked"))
+  {
+	  map.removeLayer(GBA_M);
+      GBA_M=L.geoJson(GBA, {style: style_Ass}).addTo(map);
 	  
   } 
   if ($('#wardbox').is(":checked"))
