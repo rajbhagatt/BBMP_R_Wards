@@ -182,7 +182,7 @@
 	var Ward_N=L.geoJson(BBMPWards, {style: style_Ward});
 	var GBA_M=L.geoJson(GBA, {style: style_GBA});
 	var BBMP_OLD_M=L.geoJson(bbmpold, {style: style_BBMPOLD});
-    var scmap=L.geoJson(BBMP522, {style: style_Scenario});
+  var scmap=L.geoJson(c1, {style: style_Scenario});
 
 	
 	googlebg = L.tileLayer('http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={z}',{    maxZoom: 20,    subdomains:['mt0','mt1','mt2','mt3']}).addTo(map);
@@ -241,15 +241,15 @@
 
 function scswitch() {
 		map.removeLayer(scmap);
-		if (document.getElementById('scbox').value=="500") 
+		if (document.getElementById('scbox').value=="1") 
   {
-      scmap=L.geoJson(BBMPOpt2, {style: style_Scenario_v2}).addTo(map);
+      scmap=L.geoJson(c1, {style: style_Scenario_v2}).addTo(map);
   } 
   
 		
-		else if (document.getElementById('scbox').value=="522") 
+		else if (document.getElementById('scbox').value=="2") 
 		{
-			scmap=L.geoJson(BBMP522, {style: style_Scenario_v2}).addTo(map);
+			scmap=L.geoJson(c2, {style: style_Scenario_v2}).addTo(map);
 
 		}
 		drawbasic();
